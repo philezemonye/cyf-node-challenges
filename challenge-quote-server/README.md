@@ -21,18 +21,9 @@ Your server must have at least these two "routes":
 - `/quotes` - returns ALL of the quotes, as JSON.
 - `/quotes/random` - returns ONE of the quotes, picked differently at random each time it is requested.
 
-A list of quotes (in JSON format) is provided in this repo [quotes.json](./quotes.json), but it will also be included in the starter project on glitch. Each quote is a simple object with a quote and an author.
+A list of quotes (in JSON format) is provided in this repo [quotes.json](./quotes.json). Each quote is a simple object with a quote and an author.
 
 Try to use what you know to do this challenge on your own. However, there are some steps to guide you, below.
-
-## Start by remixing our example server
-
-- Remix [this server on glitch -
-  https://glitch.com/~cyf-quotes-start](https://glitch.com/~cyf-quotes-start)
-- Name your new server `yourname-quote-server`
-- Make sure you're logged in so that it saves
-- Check that it is working by making a request to `/`
-- Take time to read the comments
 
 ## Add a `/quotes` route
 
@@ -75,11 +66,6 @@ Be sure to check that the previous routes `/quotes` and `/` are still working, t
 ## End of Level 1 challenge!
 
 Well done!
-
-- On Slack, post the address of your server.
-- Also post the address when you mark your google classroom assignment done.
-- You might want to download your project for safekeeping. (Tools: Git, Import, and Export: Download Project)
-- Read the following ideas for further work
 
 ## Level 2 Challenge - allow quote _searches_!
 
@@ -124,13 +110,6 @@ You should [read about the query string part of the URL, here](https://developer
 
 #### So, how do I get these query parameters when using Express?
 
-Look at [the code of this example glitch](https://glitch.com/~cyf-query-params).
-
-Then use it by clicking these links and then changing the search word.
-
-- https://cyf-query-params.glitch.me/search?word=Mussie
-- https://cyf-query-params.glitch.me/search?word=holiday
-
 In express, we use the object `req.query`, which will have all the parameters passed to us in the URL's query string. [The official documentation is here](https://expressjs.com/en/api.html#req.query).
 
 #### An intermediate step - echo the parameter
@@ -157,10 +136,6 @@ Once you've got that working, you can copy-paste your function into your Express
 
 Well done!
 
-- Mark the relevant Google Classroom assignment done, but _before you do_, add your two links (1 for the glitch project and 1 for your server address) as _link attachments_ to the assignment. (Instructions on this are in the assignment)
-
-- Also post the two links (as one message) [in THIS thread on Slack](https://codeyourfuture.slack.com/archives/CEDK6JPKQ/p1557924290017700).
-
 ### Ideas for further work
 
 - Use YOUR favourite quotes
@@ -177,10 +152,7 @@ In this extra challenge, you should install and use lodash to do the picking.
 
 Install the lodash library:
 
-- edit the file `package.json`...
-- add a line for lodash in the dependencies (you'll already see one for "express").
-- You can use "\*" as the version number for now.
-- Glitch will automatically install it.
+- `npm install --save lodash`
 
 Add a "require" line in your server.js so that you can use the library.
 
@@ -197,10 +169,9 @@ This is the same process for almost ANY library you can find on [https://www.npm
 Note: only do this if you have done all other Node homework this week - that is the priority.
 
 - Make a very simple React app called quotes-react-app
-- Have it fetch a random quote from your server on glitch. You'll have to enable CORS on the express app. See below.
+- Have it fetch a random quote from your server running locally or on Heroku. You'll have to enable CORS on the express app if consuming the API from Heroku. See below.
 - (Bonus: Allow the user to get a new random quote from the server, by clicking a button or clicking the quote.)
-- Host your react app on netlify
-- Post the URL to your hosted React app on Slack, and in your google classroom submission (along with your glitch server url)
+- Host your react app on Heroku and share the URL with your CYF friends :)
 
 ### Example screenshot of Simple React app
 
@@ -210,13 +181,13 @@ Note I didn't add a "get new quote" button here.
 
 #### Enabling CORS on the Express app
 
-You'll have to install and enable CORS in order to allow your JSON to be loaded from a different server (glitch.me) than your React app was initially loaded (probably netlify.com).
+You'll have to install and enable CORS in order to allow your JSON to be loaded from a different server (Heroku) than your React app was initially loaded.
 
-in `package.json` add a dependency for `"cors": "^2.8.5"`
+Install the `cors` library: `npm install --save cors`.
 
 Then in your `server.js` add...
 
-`var cors = require('cors')`
+`const cors = require('cors')`
 
 and
 
