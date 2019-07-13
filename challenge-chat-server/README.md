@@ -8,8 +8,6 @@
 
 In this challenge you must make an Express app which provides an API to manage a list of chat messages, in JSON format.
 
-A simple front-end has been provided to allow you to test _some_ of the functionality.
-
 In the optional 'React' part of this challenge, you also make a React app which allows you to read, add and delete messages, backed by your new server.
 
 ## Pre-reqs
@@ -30,8 +28,6 @@ At this first level, your API must allow a client to:
 
 - [ ] Your routes should match the patterns established in class (RESTful). See the later spoiler section "Correct Routes" if you need the answer.
 
-You can use [this chat tester client](https://cyf-chat-tester.netlify.com/) to test your routes.
-
 ### Data model
 
 Each chat message is an object with the following properties:
@@ -41,14 +37,6 @@ Each chat message is an object with the following properties:
 | `id`   | number | 17       |
 | `from` | string | "Neill"  |
 | `text` | string | "hi CYF! |
-
-## Start by remixing our example server
-
-- [ ] Make sure you're logged in to https://glitch.com/
-- [ ] Remix https://glitch.com/~cyf-chat-start
-- [ ] Name your new server `yourname-chat-server`
-- [ ] Check that it is working by making a request to `/`
-- [ ] Take time to read the comments
 
 ## Go ahead!
 
@@ -61,12 +49,6 @@ You may find useful the [express cheatsheet](https://github.com/nbogie/express-n
 ## End of Level 1 challenge!
 
 Well done!
-
-What to do now:
-
-- [ ] _Don't_ post on slack, unless there's a thread announced specifically for it.
-- [ ] Instead, attach the URLs as links when you "mark done" your assignment in Google Classroom.
-- [ ] You might want to download your project for safekeeping. (Tools: Git, Import, and Export: Download Project)
 
 ## Level 2 - simple validation
 
@@ -108,9 +90,6 @@ Note: only do this if you have done all other Node homework this week - includin
 
 - [ ] Make a very simple React app called chat-react-app
 
-Note: Do not use `create-react-app` if you want your React code to be code-reviewed! Instead, you should:
-- [ ] fork our starting repo. See "How should I start my React app", below.
-
 #### Your UI should at least:
 
 - [ ] Display the latest messages on load
@@ -127,22 +106,6 @@ Note: Do not use `create-react-app` if you want your React code to be code-revie
 
 - [ ] You'll have to enable CORS on the express app (see note below)
   * For how to post JSON, Read ["Using Fetch", on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [ ] Host your react app on netlify
-- [ ] Attach the link in your google classroom submission (along with your glitch server url)
-
-#### How should I start my React app?
-
-To make code review easier for us, please:
-- [ ] fork our starting repo. (You can later create a PR when you want a code review.)
-
-The repo is here: https://github.com/CodeYourFuture/cyf-chat-react
-
-- [ ] Follow the "Making a Pull Request" guide on https://codeyourfuture.github.io/syllabus-master/others/making-a-pull-request.html
-
-- [ ] Then run `npm install` after opening a terminal in the new project directory.
-
-- Note that this repo was made by simply running `create-react-app` exactly as you have done in the past. There is nothing special about it!
-
 
 ### Example screenshot of Simple React app
 
@@ -154,9 +117,7 @@ Here's an example of how your react app might look.
 
 You'll have to install and enable CORS on your server in order to allow your JSON to be loaded from a different server than your React app has been loaded from.
 
-(Your react app has probably been loaded from the `netlify.com` domain and your server is at `glitch.me`).
-
-On your express project on glitch, edit your `package.json` to add a dependency for the latest version of cors (e.g. `"cors": "^2.8.5"`)
+Run `npm install --save cors`.
 
 Then in your `server.js` add...
 
